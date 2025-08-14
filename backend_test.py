@@ -12,7 +12,7 @@ from datetime import datetime
 
 # Configuration
 BASE_URL = "https://costwise-1.preview.emergentagent.com"
-API_BASE = f"{BASE_URL}/api"
+API_BASE = "http://localhost:3000/api"  # Use localhost for API testing due to ingress routing issue
 
 def log_test(test_name, status, message="", details=None):
     """Log test results with timestamp"""
