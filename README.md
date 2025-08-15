@@ -4,30 +4,30 @@ A comprehensive cloud cost analysis dashboard for managing and optimizing your c
 
 ## Features
 
-### 📊 **Analytics & KPIs**
+### **Analytics & KPIs**
 - **Total Cost Tracking**: Real-time spend analysis across filtered periods
 - **Daily Average Calculations**: Track spending trends over time  
 - **Service Analysis**: Identify which services consume the most budget
 - **Top Service Insights**: Highlight your highest-cost service at a glance
 
-### 📈 **Advanced Insights**
+### **Advanced Insights**
 - **Month-End Projections**: Predict spending based on current trends
 - **Budget vs Actual Tracking**: Compare actual spend against monthly budgets
 - **Top Movers Analysis**: Identify services with the biggest cost changes (7-day or 30-day windows)
 - **Highest Spend Days**: Pinpoint cost spikes and unusual spending patterns
 
-### 🎯 **Interactive Features**
+### **Interactive Features**
 - **Dual Data Sources**: Use bundled sample data or upload your own CSV files
 - **Advanced Filtering**: Filter by date range, services, and accounts
 - **Real-time Updates**: All analytics update instantly when filters change
 - **Budget Management**: Set and track monthly budget goals
 
-### 📊 **Visualizations**
+### **Visualizations**
 - **Daily Spend Trend**: Line chart showing cost patterns over time
 - **Cost by Service**: Bar chart displaying top 12 services by cost
 - **PNG Export**: Download any chart as a high-quality PNG image
 
-### 💾 **Export Capabilities**
+### **Export Capabilities**
 - **Filtered Data Export**: Download current filtered dataset as CSV
 - **Cost by Service Export**: Export service cost breakdown 
 - **Daily Totals Export**: Export daily spending summaries
