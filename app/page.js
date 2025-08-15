@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState, useEffect, useRef } from 'react'
 import Papa from 'papaparse'
 import { 
@@ -17,7 +16,6 @@ import {
 import { Line, Bar } from 'react-chartjs-2'
 import 'chartjs-adapter-date-fns'
 import { format } from 'date-fns'
-
 // Import UI components
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -28,7 +26,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-
 // Import transform functions
 import {
   validateAndParseCSV,
@@ -46,7 +43,6 @@ import {
   formatPercentage,
   getCurrentMonthData
 } from '@/lib/transforms'
-
 import { 
   Download, 
   Upload, 
@@ -199,14 +195,14 @@ export default function FinOpsDashboard() {
   const { movers, hasEnoughData } = top_movers(filteredData, topMoversWindow, 10)
   const { mtdActual } = getCurrentMonthData(filteredData)
 
-  // Chart configurations
+  // Chart configurations with Diana's custom colors
   const dailyChartData = {
     labels: dailyTotals.map(d => d.date),
     datasets: [{
       label: 'Daily Spend',
       data: dailyTotals.map(d => d.cost),
-      borderColor: 'rgb(59, 130, 246)',
-      backgroundColor: 'rgba(59, 130, 246, 0.1)',
+      borderColor: 'rgb(147, 51, 234)', // Purple
+      backgroundColor: 'rgba(147, 51, 234, 0.1)',
       tension: 0.1
     }]
   }
@@ -217,18 +213,18 @@ export default function FinOpsDashboard() {
       label: 'Cost by Service',
       data: serviceCosts.slice(0, 12).map(s => s.cost),
       backgroundColor: [
-        'rgba(59, 130, 246, 0.8)',
-        'rgba(16, 185, 129, 0.8)',
-        'rgba(245, 158, 11, 0.8)',
-        'rgba(239, 68, 68, 0.8)',
-        'rgba(139, 92, 246, 0.8)',
-        'rgba(236, 72, 153, 0.8)',
-        'rgba(34, 197, 94, 0.8)',
-        'rgba(251, 146, 60, 0.8)',
-        'rgba(168, 85, 247, 0.8)',
-        'rgba(14, 165, 233, 0.8)',
-        'rgba(132, 204, 22, 0.8)',
-        'rgba(244, 63, 94, 0.8)'
+        'rgba(147, 51, 234, 0.8)',  // Purple
+        'rgba(236, 72, 153, 0.8)',  // Pink
+        'rgba(59, 130, 246, 0.8)',  // Blue
+        'rgba(16, 185, 129, 0.8)',  // Teal
+        'rgba(245, 158, 11, 0.8)',  // Amber
+        'rgba(239, 68, 68, 0.8)',   // Red
+        'rgba(139, 92, 246, 0.8)',  // Violet
+        'rgba(34, 197, 94, 0.8)',   // Green
+        'rgba(251, 146, 60, 0.8)',  // Orange
+        'rgba(168, 85, 247, 0.8)',  // Purple
+        'rgba(14, 165, 233, 0.8)',  // Sky
+        'rgba(132, 204, 22, 0.8)'   // Lime
       ]
     }]
   }
@@ -287,7 +283,7 @@ export default function FinOpsDashboard() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
           <p className="text-lg text-muted-foreground">Loading dashboard...</p>
         </div>
       </div>
@@ -298,9 +294,9 @@ export default function FinOpsDashboard() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto p-6">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">FinOps Cloud Cost Dashboard</h1>
+          <h1 className="text-4xl font-bold mb-2 text-purple-700">Diana's Cloud Cost Analytics</h1>
           <p className="text-lg text-muted-foreground">
-            Analyze and optimize your cloud spending with detailed insights and projections
+            Personal FinOps dashboard for cloud cost optimization and analysis
           </p>
         </div>
 
@@ -781,6 +777,13 @@ export default function FinOpsDashboard() {
               </>
             )}
           </div>
+        </div>
+
+        {/* Personal Footer */}
+        <div className="mt-12 text-center border-t pt-6">
+          <p className="text-sm text-muted-foreground">
+            Built by Diana • Cloud Cost Analytics Dashboard
+          </p>
         </div>
       </div>
     </div>
