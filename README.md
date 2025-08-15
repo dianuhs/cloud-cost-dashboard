@@ -129,10 +129,6 @@ Tests cover:
 - CSV validation logic
 - Top movers calculations
 
-## Screenshots
-
-[Screenshots would be placed here showing the dashboard in action]
-
 ## Browser Support
 
 - Chrome 90+
